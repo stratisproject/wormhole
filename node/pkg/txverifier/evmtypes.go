@@ -1171,6 +1171,10 @@ func TryWormholeChainIdFromNative(evmChainId uint64) (wormholeChainID vaa.ChainI
 		wormholeChainID = vaa.ChainIDEthereum
 	case 11155111:
 		wormholeChainID = vaa.ChainIDSepolia
+	case 105105:
+		wormholeChainID = vaa.ChainIDXertra
+	case 205205:
+		wormholeChainID = vaa.ChainIDAuroria
 	default:
 		err = fmt.Errorf(
 			"transfer Verifier does not have a registered mapping from EVM chain ID %d to a Wormhole chain ID",

@@ -55,6 +55,8 @@ export const CHAINS = {
   optimism_sepolia: 10005,
   holesky: 10006,
   polygon_sepolia: 10007,
+  xertra: 10105,
+  auroria: 10205,
 } as const;
 
 export type ChainName = keyof typeof CHAINS;
@@ -97,6 +99,8 @@ export const EVMChainNames = [
   "optimism_sepolia",
   "holesky",
   "polygon_sepolia",
+  "xertra",
+  "auroria",
 ] as const;
 export type EVMChainName = typeof EVMChainNames[number];
 
@@ -437,6 +441,16 @@ const MAINNET = {
     token_bridge: undefined,
     nft_bridge: undefined,
   },
+  xertra: {
+    core: undefined,
+    token_bridge: undefined,
+    nft_bridge: undefined,
+  },
+  auroria: {
+    core: undefined,
+    token_bridge: undefined,
+    nft_bridge: undefined,
+  },
 };
 
 const TESTNET = {
@@ -653,9 +667,9 @@ const TESTNET = {
     nft_bridge: undefined,
   },
   sepolia: {
-    core: "0x4a8bc80Ed5a4067f1CCf107057b8270E0cC11A78",
-    token_bridge: "0xDB5492265f6038831E89f495670FF909aDe94bd9",
-    nft_bridge: "0x6a0B52ac198e4870e5F3797d5B403838a5bbFD99",
+    core: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb",
+    token_bridge: "0xEDf0f8d602C44D52BC5c7d53439542493Ec60C2F",
+    nft_bridge: "0x52F33369152bDB50006dc068b65C85449BEFB9EA",
   },
   arbitrum_sepolia: {
     core: "0x6b9C8671cdDC8dEab9c719bB87cBd3e782bA6a35",
@@ -726,6 +740,16 @@ const TESTNET = {
     core: undefined,
     token_bridge: undefined,
     nft_bridge: undefined,
+  },
+  xertra: {
+    core: undefined,
+    token_bridge: undefined,
+    nft_bridge: undefined,
+  },
+  auroria: {
+    core: "0xc8C49f960e113E60276d5ff27bcc5fC1b8cB3626",
+    token_bridge: "0xc2492dc04902B5b0C334BAB7f7d899Da425cd0B9",
+    nft_bridge: "0x1f7ba7435F5b143318E5031f46fBdF042E906aFC",
   },
 };
 
@@ -1016,6 +1040,16 @@ const DEVNET = {
     token_bridge: undefined,
     nft_bridge: undefined,
   },
+  xertra: {
+    core: undefined,
+    token_bridge: undefined,
+    nft_bridge: undefined,
+  },
+  auroria: {
+    core: undefined,
+    token_bridge: undefined,
+    nft_bridge: undefined,
+  },
 };
 
 /**
@@ -1113,6 +1147,8 @@ export const CHAIN_ID_BASE_SEPOLIA = CHAINS["base_sepolia"];
 export const CHAIN_ID_OPTIMISM_SEPOLIA = CHAINS["optimism_sepolia"];
 export const CHAIN_ID_HOLESKY = CHAINS["holesky"];
 export const POLYGON_SEPOLIA = CHAINS["polygon_sepolia"];
+export const CHAIN_ID_XERTRA = CHAINS["xertra"]
+export const CHAIN_ID_AURORIA = CHAINS["auroria"]
 
 // This inverts the [[CHAINS]] object so that we can look up a chain by id
 export type ChainIdToName = {

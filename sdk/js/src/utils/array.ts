@@ -41,6 +41,8 @@ import {
   CHAIN_ID_SEDA,
   CHAIN_ID_DYMENSION,
   CHAIN_ID_PROVENANCE,
+  CHAIN_ID_XERTRA,
+  CHAIN_ID_AURORIA,
 } from "./consts";
 import { hashLookup } from "./near";
 import { getExternalAddressFromType, isValidAptosType } from "./aptos";

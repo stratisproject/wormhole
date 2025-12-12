@@ -326,8 +326,12 @@ const (
 	// ChainIDMegaETH is the ChainID of MegaETH
 	ChainIDMegaETH ChainID = 64
 
+	// ChainIDXertra is the ChainID of Xertra on Xertra
+	// TODO change to 105
+	ChainIDXertra ChainID = 10105
+
 	// ChainIDWormchain is the ChainID of Wormchain and is in its own range.
-	ChainIDWormchain ChainID = 3104
+	ChainIDWormchain ChainID = 3105
 
 	// The IBC chains start at 4000.
 	// ChainIDCosmoshub is the ChainID of Cosmoshub
@@ -364,6 +368,9 @@ const (
 	ChainIDHolesky ChainID = 10006
 	// ChainIDPolygonSepolia is the ChainID of Polygon on Sepolia
 	ChainIDPolygonSepolia ChainID = 10007
+	// ChainIDAuroria is the ChainID of Auroria on Auroria
+	ChainIDAuroria ChainID = 10205
+
 	// OBSOLETE: ChainIDMonadDevnet ChainID = 10008
 
 	// Minimum VAA size is derrived from the following assumptions:

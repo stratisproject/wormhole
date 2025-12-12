@@ -158,12 +158,13 @@ var (
 		vaa.ChainIDCreditCoin:      {Finalized: true, Safe: true, EvmChainID: 102031, PublicRPC: "https://rpc.cc3-testnet.creditcoin.network", ContractAddr: "0xaBf89de706B583424328B54dD05a8fC986750Da8"},
 		vaa.ChainIDMoca:            {Finalized: true, Safe: true, EvmChainID: 222888, PublicRPC: "https://testnet-rpc.mocachain.org/", ContractAddr: "0xaBf89de706B583424328B54dD05a8fC986750Da8"},
 		vaa.ChainIDMegaETH:         {Finalized: true, Safe: true, EvmChainID: 6343, PublicRPC: "https://timothy.megaeth.com/rpc", ContractAddr: "0x81705b969cDcc6FbFde91a0C6777bE0EF3A75855"},
-		vaa.ChainIDSepolia:         {Finalized: true, Safe: true, EvmChainID: 11155111, PublicRPC: "https://ethereum-sepolia-rpc.publicnode.com", ContractAddr: "0x4a8bc80Ed5a4067f1CCf107057b8270E0cC11A78"},
+		vaa.ChainIDSepolia:         {Finalized: true, Safe: true, EvmChainID: 11155111, PublicRPC: "https://ethereum-sepolia-rpc.publicnode.com", ContractAddr: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb"},
 		vaa.ChainIDArbitrumSepolia: {Finalized: true, Safe: true, EvmChainID: 421614, PublicRPC: "https://arbitrum-sepolia-rpc.publicnode.com", ContractAddr: "0x6b9C8671cdDC8dEab9c719bB87cBd3e782bA6a35"},
 		vaa.ChainIDBaseSepolia:     {Finalized: true, Safe: true, EvmChainID: 84532, PublicRPC: "https://base-sepolia-rpc.publicnode.com", ContractAddr: "0x79A1027a6A159502049F10906D333EC57E95F083"},
 		vaa.ChainIDOptimismSepolia: {Finalized: true, Safe: true, EvmChainID: 11155420, PublicRPC: "https://optimism-sepolia-rpc.publicnode.com", ContractAddr: "0x31377888146f3253211EFEf5c676D41ECe7D58Fe"},
 		vaa.ChainIDHolesky:         {Finalized: true, Safe: true, EvmChainID: 17000, PublicRPC: "https://1rpc.io/holesky", ContractAddr: "0xa10f2eF61dE1f19f586ab8B6F2EbA89bACE63F7a"},
 		vaa.ChainIDPolygonSepolia:  {Finalized: true, Safe: false, EvmChainID: 80002, PublicRPC: "https://polygon-amoy-bor-rpc.publicnode.com", ContractAddr: "0x6b9C8671cdDC8dEab9c719bB87cBd3e782bA6a35"},
+		vaa.ChainIDAuroria:         {Finalized: true, Safe: true, EvmChainID: 205205, PublicRPC: "https://auroria.rpc.xertra.com", ContractAddr: "0xc8C49f960e113E60276d5ff27bcc5fC1b8cB3626"},
 	}
 )
 

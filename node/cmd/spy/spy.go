@@ -297,18 +297,18 @@ func runSpy(cmd *cobra.Command, args []string) {
 
 	if *envStr != "" {
 		// If they specify --env then use the defaults for the network parameters and don't allow them to override them.
-		if *p2pNetworkID != "" || *p2pBootstrap != "" {
-			logger.Fatal(`If "--env" is specified, "--network" and "--bootstrap" may not be specified`)
-		}
+		// if *p2pNetworkID != "" || *p2pBootstrap != "" {
+		// 	logger.Fatal(`If "--env" is specified, "--network" and "--bootstrap" may not be specified`)
+		// }
 		env, err := common.ParseEnvironment(*envStr)
 		if err != nil || (env != common.MainNet && env != common.TestNet) {
 			logger.Fatal(`Invalid value for "--env", should be "mainnet" or "testnet"`)
 		}
 		*p2pNetworkID = p2p.GetNetworkId(env)
-		*p2pBootstrap, err = p2p.GetBootstrapPeers(env)
-		if err != nil {
-			logger.Fatal("failed to determine p2p bootstrap peers", zap.String("env", string(env)), zap.Error(err))
-		}
+		// *p2pBootstrap, err = p2p.GetBootstrapPeers(env)
+		// if err != nil {
+		// 	logger.Fatal("failed to determine p2p bootstrap peers", zap.String("env", string(env)), zap.Error(err))
+		// }
 	} else {
 		// If they don't specify --env, then --network and --bootstrap are required.
 		if *p2pNetworkID == "" {

@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import Koa from "koa";
 import Router from "koa-router";
 import {
@@ -7,11 +9,11 @@ import {
   StandardRelayerContext,
   logging,
   wallets,
-  missedVaas,
   providers,
   sourceTx,
-} from "relayer-engine";
-import { RedisStorage } from "relayer-engine/lib/storage/redis-storage";
+  RedisStorage,
+  spawnMissedVaaWorker,
+} from "@wormhole-foundation/relayer-engine";
 import { EVMChainId } from "@certusone/wormhole-sdk";
 import { processGenericRelayerVaa } from "./processor";
 import { Logger } from "winston";
@@ -52,16 +54,14 @@ async function main() {
   app.useStorage(store);
   app.logger(logger);
   app.use(logging(logger));
-  app.use(
-    missedVaas(app, {
-      namespace: name,
-      logger,
-      redis,
-      redisCluster,
-      redisClusterEndpoints,
-      wormholeRpcs,
-    })
-  );
+  spawnMissedVaaWorker(app, {
+    namespace: name,
+    logger,
+    redis,
+    redisCluster,
+    redisClusterEndpoints,
+    wormholeRpcs,
+  });
   app.use(providers(opts.providers));
   if (opts.privateKeys && Object.keys(opts.privateKeys).length) {
     app.use(
@@ -69,7 +69,7 @@ async function main() {
         logger,
         namespace: name,
         privateKeys: privateKeys!,
-        metrics: { registry: store.registry},
+        // metrics: { registry: store.registry},
       })
     );
   }

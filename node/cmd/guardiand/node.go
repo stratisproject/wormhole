@@ -245,6 +245,9 @@ var (
 	polygonSepoliaRPC      *string
 	polygonSepoliaContract *string
 
+	auroriaRPC      *string
+	auroriaContract *string
+
 	logLevel                *string
 	publicRpcLogDetailStr   *string
 	publicRpcLogToTelemetry *bool
@@ -494,6 +497,9 @@ func init() {
 
 	polygonSepoliaRPC = node.RegisterFlagWithValidationOrFail(NodeCmd, "polygonSepoliaRPC", "Polygon on Sepolia RPC URL", "ws://eth-devnet:8545", []string{"ws", "wss"})
 	polygonSepoliaContract = NodeCmd.Flags().String("polygonSepoliaContract", "", "Polygon on Sepolia contract address")
+
+	auroriaRPC = node.RegisterFlagWithValidationOrFail(NodeCmd, "auroriaRPC", "Auroria RPC URL", "ws://eth-devnet:8545", []string{"ws", "wss"})
+	auroriaContract = NodeCmd.Flags().String("auroriaContract", "", "Auroria contract address")
 
 	logLevel = NodeCmd.Flags().String("logLevel", "info", "Logging level (debug, info, warn, error, dpanic, panic, fatal)")
 	publicRpcLogDetailStr = NodeCmd.Flags().String("publicRpcLogDetail", "full", "The detail with which public RPC requests shall be logged (none=no logging, minimal=only log gRPC methods, full=log gRPC method, payload (up to 200 bytes) and user agent (up to 200 bytes))")
@@ -745,8 +751,9 @@ func runNode(cmd *cobra.Command, args []string) {
 	}
 
 	// Ethereum is required since we use it to get the guardian set. All other chains are optional.
-	if *ethRPC == "" {
-		logger.Fatal("Please specify --ethRPC")
+	// if *ethRPC == "" {
+	if *auroriaRPC == "" {
+		logger.Fatal("Please specify --auroriaRPC")
 	}
 
 	// In devnet mode, we generate a deterministic guardian key and write it to disk.
@@ -894,6 +901,7 @@ func runNode(cmd *cobra.Command, args []string) {
 	*optimismSepoliaContract = checkEvmArgs(logger, *optimismSepoliaRPC, *optimismSepoliaContract, vaa.ChainIDOptimismSepolia)
 	*holeskyContract = checkEvmArgs(logger, *holeskyRPC, *holeskyContract, vaa.ChainIDHolesky)
 	*polygonSepoliaContract = checkEvmArgs(logger, *polygonSepoliaRPC, *polygonSepoliaContract, vaa.ChainIDPolygonSepolia)
+	*auroriaContract = checkEvmArgs(logger, *auroriaRPC, *auroriaContract, vaa.ChainIDAuroria)
 
 	if !argsConsistent([]string{*solanaContract, *solanaRPC}) {
 		logger.Fatal("Both --solanaContract and --solanaRPC must be set or both unset")
@@ -1081,6 +1089,7 @@ func runNode(cmd *cobra.Command, args []string) {
 		rpcMap["optimismSepoliaRPC"] = *optimismSepoliaRPC
 		rpcMap["holeskyRPC"] = *holeskyRPC
 		rpcMap["polygonSepoliaRPC"] = *polygonSepoliaRPC
+		rpcMap["auroriaRPC"] = *auroriaRPC
 	}
 
 	// Other, non-chain specific parameters go here.
@@ -1110,9 +1119,9 @@ func runNode(cmd *cobra.Command, args []string) {
 	db := guardianDB.OpenDb(logger.With(zap.String("component", "badgerDb")), dataDir)
 	defer db.Close()
 
-	wormchainId := "wormchain"
+	wormchainId := "wormxertra"
 	if env == common.TestNet {
-		wormchainId = "wormchain-testnet-0"
+		wormchainId = "wormxertra-testnet-0"
 	}
 
 	var accountantWormchainConn, accountantNttWormchainConn *wormconn.ClientConn
@@ -1903,6 +1912,18 @@ func runNode(cmd *cobra.Command, args []string) {
 			watcherConfigs = append(watcherConfigs, wc)
 		}
 
+		if shouldStart(auroriaRPC) {
+			wc := &evm.WatcherConfig{
+				NetworkID:         "auroria",
+				ChainID:           vaa.ChainIDAuroria,
+				Rpc:               *auroriaRPC,
+				Contract:          *auroriaContract,
+				CcqBackfillCache:  *ccqBackfillCache,
+				TxVerifierEnabled: slices.Contains(txVerifierChains, vaa.ChainIDAuroria),
+			}
+
+			watcherConfigs = append(watcherConfigs, wc)
+		}
 	}
 
 	var ibcWatcherConfig *node.IbcWatcherConfig = nil
@@ -1933,7 +1954,9 @@ func runNode(cmd *cobra.Command, args []string) {
 		node.GuardianOptionNotary(*notaryEnabled),
 		node.GuardianOptionGatewayRelayer(*gatewayRelayerContract, gatewayRelayerWormchainConn),
 		node.GuardianOptionQueryHandler(*ccqEnabled, *ccqAllowedRequesters),
-		node.GuardianOptionAdminService(*adminSocketPath, ethRPC, ethContract, rpcMap),
+		// node.GuardianOptionAdminService(*adminSocketPath, ethRPC, ethContract, rpcMap),
+		// TODO change to Xertra
+		node.GuardianOptionAdminService(*adminSocketPath, auroriaRPC, auroriaContract, rpcMap),
 		node.GuardianOptionStatusServer(*statusAddr),
 		node.GuardianOptionAlternatePublisher(guardianAddrAsBytes, *additionalPublishers),
 		node.GuardianOptionProcessor(*p2pNetworkID),

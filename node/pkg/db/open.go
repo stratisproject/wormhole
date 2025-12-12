@@ -47,6 +47,8 @@ func OpenDb(logger *zap.Logger, dataDir *string) *Database {
 		options = options.WithLogger(badgerZapLogger{logger})
 	}
 
+	options = options.WithValueLogFileSize(256 << 20)
+
 	db, err := badger.Open(options)
 	if err != nil {
 		logger.Fatal("failed to open database", zap.Error(err))

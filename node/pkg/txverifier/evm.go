@@ -156,12 +156,13 @@ func (tv *TransferVerifier[ethClient, Connector]) TransferIsValid(
 	// If a receipt is valid, then all of its messages are valid and the receipt is safe.
 	// If a receipt is invalid, then some of its messages are invalid and the receipt is not safe.
 	summary, validateReceiptErr := tv.validateReceipt(transferReceipt)
-	tv.logger.Debug("finished processing receipt", zap.String("txHash", txHash.String()), zap.String("summary", summary.String()))
 
 	if summary == nil {
 		tv.logger.Warn("receipt summary is nil", zap.String("txHash", txHash.String()))
 		return false, validateReceiptErr
 	}
+
+	tv.logger.Debug("finished processing receipt", zap.String("txHash", txHash.String()), zap.String("summary", summary.String()))
 
 	// Check for parsing errors, which are bugs in the code.
 	if validateReceiptErr != nil {

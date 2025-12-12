@@ -3,9 +3,9 @@ import yargs from "yargs";
 import {
   Environment,
   ProvidersOpts,
-  RedisOptions,
   StandardRelayerAppOpts,
-} from "relayer-engine";
+} from "@wormhole-foundation/relayer-engine";
+import { RedisOptions } from "ioredis";
 import {
   CHAIN_ID_ETH,
   CHAIN_ID_BSC,
@@ -14,7 +14,7 @@ import {
 import { rootLogger } from "./log";
 import { ethers } from "ethers";
 
-const SCRIPTS_DIR = "../../../ethereum/ts-scripts/relayer";
+const SCRIPTS_DIR = "../../ethereum/ts-scripts/relayer";
 
 type Opts = {
   flag: Flag;
@@ -32,6 +32,7 @@ type ContractConfigEntry = { chainId: EVMChainId; address: "string" };
 type ContractsJson = {
   deliveryProviders: ContractConfigEntry[];
   wormholeRelayers: ContractConfigEntry[];
+  wormholeRelayersDev: ContractConfigEntry[];
   mockIntegrations: ContractConfigEntry[];
 };
 
@@ -109,7 +110,7 @@ const defaults: { [key in Flag]: GRRelayerAppConfig } = {
     logLevel: "debug",
     logFormat: "text",
     spyEndpoint: "localhost:7073",
-    wormholeRpcs: ["https://wormhole-v2-testnet-api.certus.one"],
+    wormholeRpcs: ["http://localhost:7071"],
     fetchSourceTxhash: true,
     redis: { host: "localhost", port: 6379 },
   },
@@ -145,6 +146,7 @@ export async function loadAppConfig(): Promise<{
       ...config,
       logger: rootLogger(config.logLevel, config.logFormat),
       privateKeys: privateKeys(contracts),
+      concurrency: 2,
     },
   };
 }

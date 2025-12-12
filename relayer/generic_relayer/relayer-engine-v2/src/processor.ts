@@ -1,5 +1,5 @@
 import * as wh from "@certusone/wormhole-sdk";
-import { Next, ParsedVaaWithBytes, sleep } from "relayer-engine";
+import { Next, ParsedVaaWithBytes, sleep } from "@wormhole-foundation/relayer-engine";
 import {
   VaaKeyType,
   RelayerPayloadId,
@@ -13,11 +13,12 @@ import {
   packOverrides,
   DeliveryOverrideArgs,
   parseEVMExecutionInfoV1,
+  parseVaaKey,
 } from "@certusone/wormhole-sdk/lib/cjs/relayer";
 import { EVMChainId } from "@certusone/wormhole-sdk";
 import { GRContext } from "./app";
 import { BigNumber, ethers } from "ethers";
-import { WormholeRelayer__factory } from "@certusone/wormhole-sdk/lib/cjs/ethers-contracts";
+import { WormholeRelayer__factory } from "@certusone/wormhole-sdk/lib/cjs/ethers-relayer-contracts";
 import {
   DeliveryExecutionRecord,
   addFatalError,
@@ -227,26 +228,28 @@ async function processDeliveryInstruction(
   executionRecord.deliveryRecord = {};
   executionRecord.deliveryRecord.deliveryInstructionsPrintable =
     deliveryInstructionsPrintable(delivery).toString();
-  executionRecord.deliveryRecord.hasAdditionalVaas =
-    delivery.vaaKeys.length > 0;
+  // executionRecord.deliveryRecord.hasAdditionalVaas =
+  //   delivery.vaaKeys.length > 0;
+  const vaaKeys = delivery.messageKeys.map(k => parseVaaKey(k.key))
+  executionRecord.deliveryRecord.hasAdditionalVaas = vaaKeys.length > 0
 
   //TODO this check is not quite correct
   if (
-    delivery.vaaKeys.findIndex(
+    vaaKeys.findIndex(
       (m) => !m.emitterAddress || !m.sequence || !m.chainId
     ) != -1
   ) {
     executionRecord.deliveryRecord.additionalVaaKeysFormatValid = false;
     throw new Error(`Received an invalid additional VAA key`);
   }
-  const vaaKeysString = delivery.vaaKeys.map((m) => vaaKeyPrintable(m));
+  const vaaKeysString = vaaKeys.map((m) => vaaKeyPrintable(m));
   ctx.logger.info(`Fetching vaas from parsed delivery vaa manifest...`, {
     vaaKeys: vaaKeysString,
   });
   executionRecord.deliveryRecord.additionalVaaKeysPrintable =
     vaaKeysString.toString();
 
-  const vaaIds = delivery.vaaKeys.map((m) => ({
+  const vaaIds = vaaKeys.map((m) => ({
     emitterAddress: m.emitterAddress!,
     emitterChain: m.chainId! as wh.ChainId,
     sequence: m.sequence!.toBigInt(),

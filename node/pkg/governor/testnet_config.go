@@ -27,9 +27,9 @@ func (gov *ChainGovernor) initTestnetConfig() ([]TokenConfigEntry, []TokenConfig
 	}
 
 	chains := []ChainConfigEntry{
-		// {EmitterChainID: vaa.ChainIDSolana, DailyLimit: 100000000},
-		// {EmitterChainID: vaa.ChainIDEthereum, DailyLimit: 100000000},
-		// {EmitterChainID: vaa.ChainIDFantom, DailyLimit: 1000000},
+		{EmitterChainID: vaa.ChainIDSolana, DailyLimit: 100000000},
+		{EmitterChainID: vaa.ChainIDEthereum, DailyLimit: 100000000},
+		{EmitterChainID: vaa.ChainIDFantom, DailyLimit: 1000000},
 		{EmitterChainID: vaa.ChainIDSepolia, DailyLimit: 1000000},
 		{EmitterChainID: vaa.ChainIDAuroria, DailyLimit: 1000000},
 	}

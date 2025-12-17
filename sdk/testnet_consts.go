@@ -109,7 +109,8 @@ var KnownTestnetAutomaticRelayerEmitters = []struct {
 // KnownTestnetWrappedNativeAddresses is a list of addresses for deployments of wrapped native asssets (e.g. WETH) on various testnets.
 var KnownTestnetWrappedNativeAddresses = map[vaa.ChainID]string{
 	// WETH
-	vaa.ChainIDSepolia: "0x7b79995e5f793a07bc00c21412e50ecae098e7f9",
+	// vaa.ChainIDSepolia: "0x7b79995e5f793a07bc00c21412e50ecae098e7f9",
+	vaa.ChainIDSepolia: "0xeef12A83EE5b7161D3873317c8E0E7B76e0B5D9c",
 	// WETH
 	vaa.ChainIDHolesky: "0xc8f93d9738e7Ad5f3aF8c548DB2f6B7F8082B5e8",
 	// WSTRAX

@@ -1920,6 +1920,8 @@ func runNode(cmd *cobra.Command, args []string) {
 				Contract:          *auroriaContract,
 				CcqBackfillCache:  *ccqBackfillCache,
 				TxVerifierEnabled: slices.Contains(txVerifierChains, vaa.ChainIDAuroria),
+				// TODO use Xertra for guardian set updates once it is ready
+				GuardianSetUpdateChain: true,
 			}
 
 			watcherConfigs = append(watcherConfigs, wc)

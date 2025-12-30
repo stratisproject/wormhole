@@ -758,7 +758,7 @@ func runNode(cmd *cobra.Command, args []string) {
 
 	// Ethereum is required since we use it to get the guardian set. All other chains are optional.
 	// if *ethRPC == "" {
-	if *auroriaRPC == "" || *xertraRPC == "" {
+	if *auroriaRPC == "" && *xertraRPC == "" {
 		logger.Fatal("Please specify --xertraRPC or --auroriaRPC")
 	}
 

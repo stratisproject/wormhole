@@ -1169,6 +1169,8 @@ func TryWormholeChainIdFromNative(evmChainId uint64) (wormholeChainID vaa.ChainI
 	// In this case, report the native chain ID as the mainnet chain ID for the purposes of testing.
 	case 1, 1337:
 		wormholeChainID = vaa.ChainIDEthereum
+	case 56:
+		wormholeChainID = vaa.ChainIDBSC
 	case 11155111:
 		wormholeChainID = vaa.ChainIDSepolia
 	case 105105:

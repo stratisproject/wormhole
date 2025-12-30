@@ -199,6 +199,7 @@ func SupportedChains() []vaa.ChainID {
 		vaa.ChainIDEthereum,
 		vaa.ChainIDSui,
 		vaa.ChainIDXertra,
+		vaa.ChainIDBSC,
 		// Testnets
 		vaa.ChainIDSepolia,
 		vaa.ChainIDHolesky,

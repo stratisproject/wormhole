@@ -1,0 +1,27 @@
+{
+  "guardianSetIndex": 0,
+  "description": "This file contains the chains against which all the scripts should run.",
+  "chains": [
+    {
+      "description": "Xertra",
+      "evmNetworkId": 105105,
+      "chainId": 105,
+      "rpc": "https://rpc.xertra.com",
+      "wormholeAddress": "0x15D2DDD056049bF16686fCF13fF621D6d110A735"
+    },
+    {
+      "description": "Ethereum",
+      "evmNetworkId": 1,
+      "chainId": 2,
+      "rpc": "https://ethereum-rpc.publicnode.com",
+      "wormholeAddress": "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb"
+    },
+    {
+      "description": "BSC",
+      "evmNetworkId": 56,
+      "chainId": 4,
+      "rpc": "https://bsc-rpc.publicnode.com",
+      "wormholeAddress": "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb"
+    }
+  ]
+}

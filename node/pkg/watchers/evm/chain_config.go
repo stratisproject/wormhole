@@ -63,8 +63,9 @@ var (
 	// NOTE: Only add a chain here if the watcher should allow it in Mainnet!
 	// NOTE: If you change this data, be sure and run the tests described at the top of this file!
 	mainnetChainConfig = EnvMap{
-		vaa.ChainIDEthereum: {Finalized: true, Safe: true, EvmChainID: 1, PublicRPC: "https://ethereum-rpc.publicnode.com", ContractAddr: "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B"},
-		vaa.ChainIDBSC:      {Finalized: true, Safe: true, EvmChainID: 56, PublicRPC: "https://bsc-rpc.publicnode.com", ContractAddr: "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B"},
+		vaa.ChainIDEthereum: {Finalized: true, Safe: true, EvmChainID: 1, PublicRPC: "https://ethereum-rpc.publicnode.com", ContractAddr: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb"},
+		vaa.ChainIDBSC:      {Finalized: true, Safe: true, EvmChainID: 56, PublicRPC: "https://bsc-rpc.publicnode.com", ContractAddr: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb"},
+		vaa.ChainIDXertra:   {Finalized: true, Safe: true, EvmChainID: 105105, PublicRPC: "https://rpc.xertra.com", ContractAddr: "0x15D2DDD056049bF16686fCF13fF621D6d110A735"},
 
 		// Polygon supports polling for finalized but not safe: https://forum.polygon.technology/t/optimizing-decentralized-apps-ux-with-milestones-a-significantly-accelerated-finality-solution/13154
 		vaa.ChainIDPolygon: {Finalized: true, Safe: false, EvmChainID: 137, PublicRPC: "https://polygon-bor-rpc.publicnode.com", ContractAddr: "0x7A4B5a56256163F07b2C80A7cA55aBE66c4ec4d7"},

@@ -78,6 +78,9 @@ var (
 	bscRPC      *string
 	bscContract *string
 
+	xertraRPC      *string
+	xertraContract *string
+
 	polygonRPC      *string
 	polygonContract *string
 
@@ -335,6 +338,9 @@ func init() {
 
 	bscRPC = node.RegisterFlagWithValidationOrFail(NodeCmd, "bscRPC", "Binance Smart Chain RPC URL", "ws://eth-devnet:8545", []string{"ws", "wss"})
 	bscContract = NodeCmd.Flags().String("bscContract", "", "Binance Smart Chain contract address")
+
+	xertraRPC = node.RegisterFlagWithValidationOrFail(NodeCmd, "xertraRPC", "Xertra RPC URL", "ws://eth-devnet:8545", []string{"ws", "wss"})
+	xertraContract = NodeCmd.Flags().String("xertraContract", "", "Xertra contract address")
 
 	polygonRPC = node.RegisterFlagWithValidationOrFail(NodeCmd, "polygonRPC", "Polygon RPC URL", "ws://eth-devnet:8545", []string{"ws", "wss"})
 	polygonContract = NodeCmd.Flags().String("polygonContract", "", "Polygon contract address")
@@ -752,8 +758,8 @@ func runNode(cmd *cobra.Command, args []string) {
 
 	// Ethereum is required since we use it to get the guardian set. All other chains are optional.
 	// if *ethRPC == "" {
-	if *auroriaRPC == "" {
-		logger.Fatal("Please specify --auroriaRPC")
+	if *auroriaRPC == "" || *xertraRPC == "" {
+		logger.Fatal("Please specify --xertraRPC or --auroriaRPC")
 	}
 
 	// In devnet mode, we generate a deterministic guardian key and write it to disk.
@@ -865,6 +871,7 @@ func runNode(cmd *cobra.Command, args []string) {
 	// Validate the args for all the EVM chains. The last flag indicates if the chain is allowed in mainnet.
 	*ethContract = checkEvmArgs(logger, *ethRPC, *ethContract, vaa.ChainIDEthereum)
 	*bscContract = checkEvmArgs(logger, *bscRPC, *bscContract, vaa.ChainIDBSC)
+	*xertraContract = checkEvmArgs(logger, *xertraRPC, *xertraContract, vaa.ChainIDXertra)
 	*polygonContract = checkEvmArgs(logger, *polygonRPC, *polygonContract, vaa.ChainIDPolygon)
 	*avalancheContract = checkEvmArgs(logger, *avalancheRPC, *avalancheContract, vaa.ChainIDAvalanche)
 	*fantomContract = checkEvmArgs(logger, *fantomRPC, *fantomContract, vaa.ChainIDFantom)
@@ -1031,6 +1038,7 @@ func runNode(cmd *cobra.Command, args []string) {
 	rpcMap["fogoRPC"] = *fogoRPC
 	rpcMap["ethRPC"] = *ethRPC
 	rpcMap["bscRPC"] = *bscRPC
+	rpcMap["xertraRPC"] = *xertraRPC
 	rpcMap["polygonRPC"] = *polygonRPC
 	rpcMap["avalancheRPC"] = *avalancheRPC
 	rpcMap["algorandIndexerRPC"] = *algorandIndexerRPC
@@ -1265,13 +1273,12 @@ func runNode(cmd *cobra.Command, args []string) {
 
 	if shouldStart(ethRPC) {
 		wc := &evm.WatcherConfig{
-			NetworkID:              "eth",
-			ChainID:                vaa.ChainIDEthereum,
-			Rpc:                    *ethRPC,
-			Contract:               *ethContract,
-			GuardianSetUpdateChain: true,
-			CcqBackfillCache:       *ccqBackfillCache,
-			TxVerifierEnabled:      slices.Contains(txVerifierChains, vaa.ChainIDEthereum),
+			NetworkID:         "eth",
+			ChainID:           vaa.ChainIDEthereum,
+			Rpc:               *ethRPC,
+			Contract:          *ethContract,
+			CcqBackfillCache:  *ccqBackfillCache,
+			TxVerifierEnabled: slices.Contains(txVerifierChains, vaa.ChainIDEthereum),
 		}
 
 		watcherConfigs = append(watcherConfigs, wc)
@@ -1285,6 +1292,20 @@ func runNode(cmd *cobra.Command, args []string) {
 			Contract:          *bscContract,
 			CcqBackfillCache:  *ccqBackfillCache,
 			TxVerifierEnabled: slices.Contains(txVerifierChains, vaa.ChainIDBSC),
+		}
+
+		watcherConfigs = append(watcherConfigs, wc)
+	}
+
+	if shouldStart(xertraRPC) {
+		wc := &evm.WatcherConfig{
+			NetworkID:              "xertra",
+			ChainID:                vaa.ChainIDXertra,
+			Rpc:                    *xertraRPC,
+			Contract:               *xertraContract,
+			GuardianSetUpdateChain: true,
+			CcqBackfillCache:       *ccqBackfillCache,
+			TxVerifierEnabled:      slices.Contains(txVerifierChains, vaa.ChainIDXertra),
 		}
 
 		watcherConfigs = append(watcherConfigs, wc)
@@ -1948,6 +1969,13 @@ func runNode(cmd *cobra.Command, args []string) {
 		guardianAddrAsBytes = ethcrypto.PubkeyToAddress(guardianSigner.PublicKey(rootCtx)).Bytes()
 	}
 
+	var adminServiceOption *node.GuardianOption
+	if env == common.MainNet {
+		adminServiceOption = node.GuardianOptionAdminService(*adminSocketPath, xertraRPC, xertraContract, rpcMap)
+	} else {
+		adminServiceOption = node.GuardianOptionAdminService(*adminSocketPath, auroriaRPC, auroriaContract, rpcMap)
+	}
+
 	guardianOptions := []*node.GuardianOption{
 		node.GuardianOptionDatabase(db),
 		node.GuardianOptionWatchers(watcherConfigs, ibcWatcherConfig),
@@ -1956,9 +1984,7 @@ func runNode(cmd *cobra.Command, args []string) {
 		node.GuardianOptionNotary(*notaryEnabled),
 		node.GuardianOptionGatewayRelayer(*gatewayRelayerContract, gatewayRelayerWormchainConn),
 		node.GuardianOptionQueryHandler(*ccqEnabled, *ccqAllowedRequesters),
-		// node.GuardianOptionAdminService(*adminSocketPath, ethRPC, ethContract, rpcMap),
-		// TODO change to Xertra
-		node.GuardianOptionAdminService(*adminSocketPath, auroriaRPC, auroriaContract, rpcMap),
+		adminServiceOption,
 		node.GuardianOptionStatusServer(*statusAddr),
 		node.GuardianOptionAlternatePublisher(guardianAddrAsBytes, *additionalPublishers),
 		node.GuardianOptionProcessor(*p2pNetworkID),

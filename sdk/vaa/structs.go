@@ -327,8 +327,7 @@ const (
 	ChainIDMegaETH ChainID = 64
 
 	// ChainIDXertra is the ChainID of Xertra on Xertra
-	// TODO change to 105
-	ChainIDXertra ChainID = 10105
+	ChainIDXertra ChainID = 105
 
 	// ChainIDWormchain is the ChainID of Wormchain and is in its own range.
 	ChainIDWormchain ChainID = 3105

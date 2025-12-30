@@ -95,8 +95,9 @@ func buildEmitterMap(hexmap map[vaa.ChainID]string) map[vaa.ChainID][]byte {
 var KnownTokenbridgeEmitters = buildEmitterMap(knownTokenbridgeEmitters)
 var knownTokenbridgeEmitters = map[vaa.ChainID]string{
 	vaa.ChainIDSolana:     "ec7372995d5cc8732397fb0ad35c0121e0eaa90d26f828a534cab54391b3a4f5",
-	vaa.ChainIDEthereum:   "0000000000000000000000003ee18b2214aff97000d974cf647e7c347e8fa585",
-	vaa.ChainIDBSC:        "000000000000000000000000b6f6d86a8f9879a9c87f643768d9efc38c1da6e7",
+	vaa.ChainIDEthereum:   "000000000000000000000000edf0f8d602c44d52bc5c7d53439542493ec60c2f",
+	vaa.ChainIDBSC:        "000000000000000000000000edf0f8d602c44d52bc5c7d53439542493ec60c2f",
+	vaa.ChainIDXertra:     "000000000000000000000000ef5139fa5c2542f32ba0b872541be8f8725c4479",
 	vaa.ChainIDPolygon:    "0000000000000000000000005a58505a96d1dbf8df91cb21b54419fc36e93fde",
 	vaa.ChainIDAvalanche:  "0000000000000000000000000e082f06ff657d94310cb8ce8b0d9a04541d8052",
 	vaa.ChainIDAlgorand:   "67e93fa6c8ac5c819990aa7340c0c16b508abb1178be9b30d024b8ac25193d45",
@@ -133,8 +134,9 @@ var knownTokenbridgeEmitters = map[vaa.ChainID]string{
 var KnownNFTBridgeEmitters = buildEmitterMap(knownNFTBridgeEmitters)
 var knownNFTBridgeEmitters = map[vaa.ChainID]string{
 	vaa.ChainIDSolana:    "0def15a24423e1edd1a5ab16f557b9060303ddbab8c803d2ee48f4b78a1cfd6b",
-	vaa.ChainIDEthereum:  "0000000000000000000000006ffd7ede62328b3af38fcd61461bbfc52f5651fe",
-	vaa.ChainIDBSC:       "0000000000000000000000005a58505a96d1dbf8df91cb21b54419fc36e93fde",
+	vaa.ChainIDEthereum:  "00000000000000000000000052f33369152bdb50006dc068b65c85449befb9ea",
+	vaa.ChainIDBSC:       "00000000000000000000000052f33369152bdb50006dc068b65c85449befb9ea",
+	vaa.ChainIDXertra:    "000000000000000000000000b4322307e407682e5d4c813c9a93c0ef6505cd6c",
 	vaa.ChainIDPolygon:   "00000000000000000000000090bbd86a6fe93d3bc3ed6335935447e75fab7fcf",
 	vaa.ChainIDAvalanche: "000000000000000000000000f7b6737ca9c4e08ae573f75a97b73d7a813f5de5",
 	vaa.ChainIDFantom:    "000000000000000000000000A9c7119aBDa80d4a4E0C06C8F4d8cF5893234535",
@@ -191,4 +193,8 @@ var KnownAutomaticRelayerEmitters = []struct {
 var KnownWrappedNativeAddress = map[vaa.ChainID]string{
 	// WETH
 	vaa.ChainIDEthereum: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+	// WBNB
+	vaa.ChainIDBSC: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+	// WSTRAX
+	vaa.ChainIDXertra: "0xeA705D2DbD8DE7Dc70Db7B531D0F620d9CeE9d18",
 }

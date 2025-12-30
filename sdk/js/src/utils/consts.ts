@@ -39,7 +39,8 @@ export const CHAINS = {
   berachain: 39,
   seievm: 40,
   snaxchain: 43,
-  wormchain: 3104,
+  xertra: 105,
+  wormchain: 3105,
   cosmoshub: 4000,
   evmos: 4001,
   kujira: 4002,
@@ -55,7 +56,6 @@ export const CHAINS = {
   optimism_sepolia: 10005,
   holesky: 10006,
   polygon_sepolia: 10007,
-  xertra: 10105,
   auroria: 10205,
 } as const;
 
@@ -159,9 +159,9 @@ const MAINNET = {
     nft_bridge: "WnFt12ZrnzZrFZkt2xsNsaNWoQribnuQ5B5FrDbwDhD",
   },
   ethereum: {
-    core: "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B",
-    token_bridge: "0x3ee18B2214AFF97000D974cf647E7C347E8fa585",
-    nft_bridge: "0x6FFd7EdE62328b3Af38FCD61461Bbfc52F5651fE",
+    core: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb",
+    token_bridge: "0xEDf0f8d602C44D52BC5c7d53439542493Ec60C2F",
+    nft_bridge: "0x52F33369152bDB50006dc068b65C85449BEFB9EA",
   },
   terra: {
     core: "terra1dq03ugtd40zu9hcgdzrsq6z2z4hwhc9tqk2uy5",
@@ -169,9 +169,9 @@ const MAINNET = {
     nft_bridge: undefined,
   },
   bsc: {
-    core: "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B",
-    token_bridge: "0xB6F6D86a8f9879A9c87f643768d9efc38c1Da6E7",
-    nft_bridge: "0x5a58505a96D1dbf8dF91cB21B54419FC36e93fdE",
+    core: "0x3378932e90Dbf0724EDfd470F5b2eAD2333D89eb",
+    token_bridge: "0xEDf0f8d602C44D52BC5c7d53439542493Ec60C2F",
+    nft_bridge: "0x52F33369152bDB50006dc068b65C85449BEFB9EA",
   },
   polygon: {
     core: "0x7A4B5a56256163F07b2C80A7cA55aBE66c4ec4d7",
@@ -442,9 +442,9 @@ const MAINNET = {
     nft_bridge: undefined,
   },
   xertra: {
-    core: undefined,
-    token_bridge: undefined,
-    nft_bridge: undefined,
+    core: "0x15D2DDD056049bF16686fCF13fF621D6d110A735",
+    token_bridge: "0xEf5139fA5C2542F32BA0b872541be8f8725C4479",
+    nft_bridge: "0xB4322307E407682E5d4c813C9a93C0ef6505cd6C",
   },
   auroria: {
     core: undefined,

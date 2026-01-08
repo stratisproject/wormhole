@@ -15,7 +15,7 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/certusone/wormhole/node/pkg/common"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 func TestParseIbcReceivePublishEvent(t *testing.T) {

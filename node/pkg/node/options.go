@@ -26,7 +26,7 @@ import (
 	"github.com/gorilla/mux"
 	libp2p_crypto "github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/wormhole-foundation/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk"
 )
 
 type Environment string

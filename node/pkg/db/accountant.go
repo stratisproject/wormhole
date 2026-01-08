@@ -7,7 +7,7 @@ import (
 
 	"github.com/certusone/wormhole/node/pkg/common"
 	"github.com/dgraph-io/badger/v3"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 
 	ethCommon "github.com/ethereum/go-ethereum/common"
 	"go.uber.org/zap"

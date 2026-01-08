@@ -20,11 +20,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
 	"github.com/wormhole-foundation/wormchain/interchaintest/helpers"
 	"github.com/wormhole-foundation/wormchain/interchaintest/helpers/wormchain_ibc_receiver"
 	"github.com/wormhole-foundation/wormchain/interchaintest/helpers/wormhole_ibc"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 const CUSTOM_IBC_VERSION string = "ibc-wormhole-v1"

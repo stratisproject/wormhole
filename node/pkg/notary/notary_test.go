@@ -12,9 +12,9 @@ import (
 
 	"github.com/certusone/wormhole/node/pkg/common"
 	"github.com/certusone/wormhole/node/pkg/db"
+	"github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 
 	eth_common "github.com/ethereum/go-ethereum/common"

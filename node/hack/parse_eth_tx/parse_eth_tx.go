@@ -16,7 +16,7 @@ import (
 	"go.uber.org/zap"
 
 	ethCommon "github.com/ethereum/go-ethereum/common"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 var (

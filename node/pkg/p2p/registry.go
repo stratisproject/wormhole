@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	gossipv1 "github.com/certusone/wormhole/node/pkg/proto/gossip/v1"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 // The p2p package implements a simple global metrics registry singleton for node status values transmitted on-chain.

@@ -8,8 +8,8 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	wormholesdk "github.com/stratisproject/wormhole/sdk"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	wormholesdk "github.com/wormhole-foundation/wormhole/sdk"
 )
 
 // This function is used to onboard Wormhole Guardians as Validators on Wormchain.

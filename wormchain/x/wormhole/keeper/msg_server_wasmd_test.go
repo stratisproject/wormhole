@@ -15,13 +15,13 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/holiman/uint256"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/crypto/sha3"
 	keepertest "github.com/wormhole-foundation/wormchain/testutil/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func createWasmStoreCodePayload(wasmBytes []byte) []byte {

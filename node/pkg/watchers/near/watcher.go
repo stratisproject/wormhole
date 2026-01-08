@@ -14,7 +14,7 @@ import (
 	"github.com/certusone/wormhole/node/pkg/watchers/near/nearapi"
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/mr-tron/base58"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 )
 

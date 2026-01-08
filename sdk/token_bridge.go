@@ -3,7 +3,7 @@ package sdk
 import (
 	"bytes"
 
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 // Environment represents the Wormhole network environment

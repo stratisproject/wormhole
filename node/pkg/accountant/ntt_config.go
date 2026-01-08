@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/certusone/wormhole/node/pkg/common"
-	"github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 type emitterConfigEntry struct {

@@ -1,7 +1,7 @@
 package governor
 
 import (
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 // FlowCancelCorridors returns a list of `pipe`s representing a pair of chains for which flow canceling is enabled.

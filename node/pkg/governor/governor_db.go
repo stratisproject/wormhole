@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/certusone/wormhole/node/pkg/db"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 
 	"go.uber.org/zap"
 )

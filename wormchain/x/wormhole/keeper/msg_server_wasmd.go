@@ -7,8 +7,8 @@ import (
 	wasmdtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 	"golang.org/x/crypto/sha3"
 )
 

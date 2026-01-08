@@ -59,8 +59,8 @@ require (
 	github.com/holiman/uint256 v1.2.1
 	github.com/prometheus/client_model v0.6.1
 	github.com/prometheus/common v0.60.0
+	github.com/stratisproject/wormhole/sdk v0.0.0-20220926172624-4b38dc650bb0
 	github.com/wormhole-foundation/wormchain v0.0.0-00010101000000-000000000000
-	github.com/wormhole-foundation/wormhole/sdk v0.0.0-20220926172624-4b38dc650bb0
 	google.golang.org/genproto/googleapis/api v0.0.0-20230726155614-23370e0ffb3e
 	nhooyr.io/websocket v1.8.7
 )
@@ -331,6 +331,7 @@ require (
 	github.com/weaveworks/promrus v1.2.0 // indirect
 	github.com/whyrusleeping/go-keyspace v0.0.0-20160322163242-5b898ac5add1 // indirect
 	github.com/wlynxg/anet v0.0.5 // indirect
+	github.com/wormhole-foundation/wormhole/sdk v0.0.0-20220926172624-4b38dc650bb0 // indirect
 	github.com/zondax/hid v0.9.2 // indirect
 	github.com/zondax/ledger-go v0.14.3 // indirect
 	go.etcd.io/bbolt v1.3.6 // indirect
@@ -372,7 +373,7 @@ require (
 // https://github.com/cosmos/cosmos-sdk/issues/10925 for more details.
 replace github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 
-replace github.com/wormhole-foundation/wormhole/sdk => ../sdk
+replace github.com/stratisproject/wormhole/sdk => ../sdk
 
 replace github.com/wormhole-foundation/wormchain => ../wormchain
 

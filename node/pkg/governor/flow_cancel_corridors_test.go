@@ -3,8 +3,8 @@ package governor
 import (
 	"testing"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func TestFlowCancelCorridorsMainnetDeployment(t *testing.T) {

@@ -7,12 +7,12 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	keepertest "github.com/wormhole-foundation/wormchain/testutil/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/ante"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 var _ sdk.Tx = &MockTx{}

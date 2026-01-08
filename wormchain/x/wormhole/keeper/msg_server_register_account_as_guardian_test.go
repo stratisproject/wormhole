@@ -5,13 +5,13 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/crypto"
+	wormholesdk "github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	keepertest "github.com/wormhole-foundation/wormchain/testutil/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/keeper"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	wormholesdk "github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 // hot-swap validator address when guardian set size is 1 (for testnets and local devnets)

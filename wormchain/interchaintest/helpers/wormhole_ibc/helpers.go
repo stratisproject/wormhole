@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
 	"github.com/wormhole-foundation/wormchain/interchaintest/helpers"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func SubmitWormholeIbcUpdateChannelChainMsg(t *testing.T,

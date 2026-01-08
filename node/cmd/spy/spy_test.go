@@ -14,7 +14,7 @@ import (
 	publicrpcv1 "github.com/certusone/wormhole/node/pkg/proto/publicrpc/v1"
 	spyv1 "github.com/certusone/wormhole/node/pkg/proto/spy/v1"
 	ipfslog "github.com/ipfs/go-log/v2"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 
 	"google.golang.org/grpc"

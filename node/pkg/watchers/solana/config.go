@@ -10,7 +10,7 @@ import (
 	"github.com/gagliardetto/solana-go"
 	solana_types "github.com/gagliardetto/solana-go"
 	solana_rpc "github.com/gagliardetto/solana-go/rpc"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 type WatcherConfig struct {

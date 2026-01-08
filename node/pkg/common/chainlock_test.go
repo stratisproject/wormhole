@@ -11,9 +11,9 @@ import (
 	"time"
 
 	eth_common "github.com/ethereum/go-ethereum/common"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 // The following constants are used to calculate the offset of each field in the serialized message publication.

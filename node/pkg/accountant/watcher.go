@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/certusone/wormhole/node/pkg/common"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 
 	tmAbci "github.com/tendermint/tendermint/abci/types"
 	tmHttp "github.com/tendermint/tendermint/rpc/client/http"

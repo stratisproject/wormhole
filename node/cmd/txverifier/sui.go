@@ -14,8 +14,8 @@ import (
 	"github.com/certusone/wormhole/node/pkg/telemetry"
 	txverifier "github.com/certusone/wormhole/node/pkg/txverifier"
 	"github.com/certusone/wormhole/node/pkg/version"
-	"github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 
 	ipfslog "github.com/ipfs/go-log/v2"
 	"github.com/spf13/cobra"

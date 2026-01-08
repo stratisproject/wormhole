@@ -3104,6 +3104,8 @@ github.com/wormhole-foundation/cosmos-sdk v0.45.9-wormhole h1:oWRuBpqReZoLX3pXeq
 github.com/wormhole-foundation/cosmos-sdk v0.45.9-wormhole/go.mod h1:Z5M4TX7PsHNHlF/1XanI2DIpORQ+Q/st7oaeufEjnvU=
 github.com/wormhole-foundation/wasmd v0.30.0-wormchain-2 h1:T5lnEObp6nfp83K1GJSvgaRQ8VQjhokupAsEPWBph4A=
 github.com/wormhole-foundation/wasmd v0.30.0-wormchain-2/go.mod h1:BcwmiI8b2fR2MGioz3HeVvON5QjSDfrnUbGu0gKRk5U=
+github.com/wormhole-foundation/wormhole/sdk v0.0.0-20220926172624-4b38dc650bb0 h1:DdUCvDrDCLltlgYNfgaQDqmymsKCFZkWNPQdOCQQNA8=
+github.com/wormhole-foundation/wormhole/sdk v0.0.0-20220926172624-4b38dc650bb0/go.mod h1:Vg7Cbb370S+JihB+of1rWm9Aaxzf0GPPvKszPeSb7AE=
 github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208/go.mod h1:IotVbo4F+mw0EzQ08zFqg7pK3FebNXpaMsRy2RT+Ees=
 github.com/xanzy/go-gitlab v0.31.0/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=
 github.com/xanzy/go-gitlab v0.32.0/go.mod h1:sPLojNBn68fMUWSxIJtdVVIP8uSBYqesTfDUseX11Ug=

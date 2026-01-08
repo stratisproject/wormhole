@@ -10,9 +10,9 @@ import (
 	gossipv1 "github.com/certusone/wormhole/node/pkg/proto/gossip/v1"
 	"github.com/ethereum/go-ethereum/crypto"
 	pubsub "github.com/libp2p/go-libp2p-pubsub"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 	"google.golang.org/protobuf/proto"
 )
 

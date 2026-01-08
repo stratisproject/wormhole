@@ -7,7 +7,7 @@ import (
 
 	"github.com/certusone/wormhole/node/pkg/watchers/evm/connectors"
 	eth_common "github.com/ethereum/go-ethereum/common"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 )
 

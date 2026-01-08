@@ -19,9 +19,9 @@ import (
 	// "github.com/cosmos/cosmos-sdk/client/flags"
 
 	"github.com/ethereum/go-ethereum/crypto"
+	wormholesdk "github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	wormholesdk "github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 // normal vaa flags

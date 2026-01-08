@@ -18,7 +18,7 @@ require (
 	github.com/strangelove-ventures/interchaintest/v4 v4.0.0-20230815125617-67bc301715ea
 	github.com/tendermint/crypto v0.0.0-20191022145703-50d29ede1e15
 	github.com/tendermint/tendermint v0.34.26
-	github.com/wormhole-foundation/wormhole/sdk v0.0.0-20230614161948-7f6213019abf
+	github.com/stratisproject/wormhole/sdk v0.0.0-20230614161948-7f6213019abf
 )
 
 require (
@@ -220,6 +220,5 @@ replace (
 	github.com/tendermint/tendermint => github.com/informalsystems/tendermint v0.34.23
 	github.com/vedhavyas/go-subkey => github.com/strangelove-ventures/go-subkey v1.0.7
 	github.com/wormhole-foundation/wormchain => ../
-	github.com/wormhole-foundation/wormhole/sdk => ../../sdk
-
+	github.com/stratisproject/wormhole/sdk => ../../sdk
 )

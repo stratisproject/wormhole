@@ -18,7 +18,7 @@ import (
 
 	"github.com/certusone/wormhole/node/pkg/common"
 	guardianDB "github.com/certusone/wormhole/node/pkg/db"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"go.uber.org/zap/zaptest"

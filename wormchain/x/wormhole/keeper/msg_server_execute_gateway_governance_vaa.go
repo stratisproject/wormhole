@@ -9,8 +9,8 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func (k msgServer) ExecuteGatewayGovernanceVaa(

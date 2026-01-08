@@ -5,7 +5,7 @@
 package governor
 
 import (
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 func ChainList() []ChainConfigEntry {

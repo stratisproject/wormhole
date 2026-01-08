@@ -3,7 +3,7 @@ package interfaces
 import (
 	"context"
 
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 type Reobserver interface {

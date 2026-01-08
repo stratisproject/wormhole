@@ -20,8 +20,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/crypto"
+	wormholesdk "github.com/stratisproject/wormhole/sdk"
 	wormholetypes "github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	wormholesdk "github.com/wormhole-foundation/wormhole/sdk"
 )
 
 func SetupHotSwapChain(t *testing.T, wormchainVersion string, guardians guardians.ValSet, numVals int) ibc.Chain {

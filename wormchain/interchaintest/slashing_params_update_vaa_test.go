@@ -11,10 +11,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
 	"github.com/wormhole-foundation/wormchain/interchaintest/helpers"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 // Params is the slashing params response from the chain

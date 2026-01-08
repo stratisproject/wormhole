@@ -18,7 +18,7 @@ import (
 	"github.com/certusone/wormhole/node/pkg/common"
 	"github.com/certusone/wormhole/node/pkg/watchers/evm"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 
 	ethAbi "github.com/certusone/wormhole/node/pkg/watchers/evm/connectors/ethabi"
 	ethBind "github.com/ethereum/go-ethereum/accounts/abi/bind"

@@ -6,8 +6,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/wormhole-foundation/wormchain/x/wormhole/types"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func (k msgServer) AddWasmInstantiateAllowlist(goCtx context.Context, msg *types.MsgAddWasmInstantiateAllowlist) (*types.MsgWasmInstantiateAllowlistResponse, error) {

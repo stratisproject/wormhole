@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 // The SuiApi interface defines the functions that are required to interact with the Sui RPC.

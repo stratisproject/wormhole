@@ -10,9 +10,9 @@ import (
 
 	"github.com/certusone/wormhole/node/pkg/common"
 	ethCommon "github.com/ethereum/go-ethereum/common"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 )
 

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
-	"github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func TestChainListSize(t *testing.T) {

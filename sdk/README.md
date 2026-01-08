@@ -30,7 +30,7 @@ To add a new ChainID to Wormhole:
 # Directory Structure
 
  * [sdk/](./): Go SDK.  This package must live in this directory so that clients can use the
-   `github.com/wormhole-foundation/wormhole/sdk` import path.
+   `github.com/stratisproject/wormhole/sdk` import path.
  * [vaa/](./vaa/): Go package for using VAAs (Verifiable Action Approval).
  * [js/](./js/README.md): Legacy JavaScript SDK (**Deprecated and Unsupported**)
    * Please use the new Wormhole TypeScript SDK instead: [`@wormhole-foundation/sdk`](https://github.com/wormhole-foundation/wormhole-sdk-ts)

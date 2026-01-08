@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func createWasmMigrationPayload(code_id uint64, contractAddr string, json_msg string) []byte {

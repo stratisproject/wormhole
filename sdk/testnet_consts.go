@@ -1,7 +1,7 @@
 package sdk
 
 import (
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 // KnownTestnetEmitters is a list of known emitters on the various L1 testnets.

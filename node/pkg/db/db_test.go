@@ -13,7 +13,7 @@ import (
 
 	"github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 
 	"testing"

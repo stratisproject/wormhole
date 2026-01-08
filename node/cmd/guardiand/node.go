@@ -46,8 +46,8 @@ import (
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/wormhole-foundation/wormhole/sdk"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"go.uber.org/zap"
 
 	ipfslog "github.com/ipfs/go-log/v2"

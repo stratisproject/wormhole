@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
 )

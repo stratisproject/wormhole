@@ -3,8 +3,8 @@ package common
 import (
 	"testing"
 
+	"github.com/stratisproject/wormhole/sdk"
 	"github.com/stretchr/testify/assert"
-	"github.com/wormhole-foundation/wormhole/sdk"
 )
 
 func TestParseEnvironment(t *testing.T) {

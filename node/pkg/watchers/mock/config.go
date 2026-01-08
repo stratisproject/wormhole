@@ -8,7 +8,7 @@ import (
 	"github.com/certusone/wormhole/node/pkg/watchers"
 	"github.com/certusone/wormhole/node/pkg/watchers/interfaces"
 	eth_common "github.com/ethereum/go-ethereum/common"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 type ObservationDb map[eth_common.Hash]*common.MessagePublication

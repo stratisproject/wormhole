@@ -1,4 +1,4 @@
-module github.com/wormhole-foundation/wormhole/sdk
+module github.com/stratisproject/wormhole/sdk
 
 go 1.20
 

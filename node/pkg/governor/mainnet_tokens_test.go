@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func TestTokenListSize(t *testing.T) {

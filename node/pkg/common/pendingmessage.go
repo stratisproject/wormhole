@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 )
 
 const (

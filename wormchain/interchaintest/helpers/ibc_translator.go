@@ -12,9 +12,9 @@ import (
 
 	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
 	"github.com/strangelove-ventures/interchaintest/v4/ibc"
+	"github.com/stratisproject/wormhole/sdk/vaa"
 	"github.com/stretchr/testify/require"
 	"github.com/wormhole-foundation/wormchain/interchaintest/guardians"
-	"github.com/wormhole-foundation/wormhole/sdk/vaa"
 )
 
 func SubmitAllowlistInstantiateContract(

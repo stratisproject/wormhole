@@ -859,6 +859,7 @@ func (w *Watcher) postMessage(
 	 */
 	if vaa.IsTransfer(ev.Payload) && msg.ConsistencyLevel == 1 {
 		pendingEntry.message.ConsistencyLevel = vaa.ConsistencyLevelPublishImmediately
+		pendingEntry.effectiveCL = vaa.ConsistencyLevelPublishImmediately
 		pendingEntry.additionalBlocks = 15
 	}
 

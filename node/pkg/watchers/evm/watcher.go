@@ -854,6 +854,14 @@ func (w *Watcher) postMessage(
 		w.cclHandleMessage(parentCtx, pendingEntry, ev.Sender)
 	}
 
+	/**
+	 * For transfer messages change consistency level to publish immediately with 15 additional blocks
+	 */
+	if vaa.IsTransfer(ev.Payload) && msg.ConsistencyLevel == vaa.ConsistencyLevelFinalized {
+		pendingEntry.message.ConsistencyLevel = vaa.ConsistencyLevelPublishImmediately
+		pendingEntry.additionalBlocks = 15
+	}
+
 	w.logger.Info("found new message publication transaction",
 		zap.String("msgId", msg.MessageIDString()),
 		zap.String("txHash", msg.TxIDString()),
